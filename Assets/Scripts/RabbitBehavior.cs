@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -11,7 +12,9 @@ public class RabbitBehavior : MonoBehaviour
 
     private Animator _characterAnimator;
 
+    [FormerlySerializedAs("m_camera")] public GameManager gameManager;
     public CameraBehavior m_camera;
+    
     public int jumpForce = 400;
 
     public Text failScore;
@@ -89,7 +92,7 @@ public class RabbitBehavior : MonoBehaviour
             }
             PlayerPrefs.SetInt("FoodCount", score);
         }
-        if (collision.gameObject.name.Contains("Finish")) m_camera.WinGame();
+        if (collision.gameObject.name.Contains("Finish")) gameManager.WinGame();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -102,7 +105,7 @@ public class RabbitBehavior : MonoBehaviour
     {
         if (failScore != null) failScore.text = "+ " + score;
         if (winScore != null) winScore.text = "+ " + score;
-        m_camera.EndGame();
+        gameManager.EndGame();
         score = 0;
     }
 }

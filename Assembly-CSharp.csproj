@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\CameraBehavior.cs" />
      <Compile Include="Assets\Scripts\RabbitBehavior.cs" />
      <Compile Include="Assets\Scripts\FoodBehavior.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <None Include="Assets\Fonts\Cabin_Sketch\OFL.txt" />
      <None Include="Assets\Fonts\Fredericka_the_Great\OFL.txt" />
  <Reference Include="UnityEngine">
